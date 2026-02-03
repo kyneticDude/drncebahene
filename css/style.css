@@ -91,7 +91,11 @@ header [class^="container-"] [class^="col-"], header [class^="container-"] [clas
 }
 
 /* base color variable*/
-:root {--base-color: #ff214f;}
+:root {
+    --base-color: #ff214f;
+    --brand-accent: #9fc2bd;
+    --brand-yellow: #F1C256;
+}
 
 /* ===================================
     03. Typography
@@ -130,6 +134,7 @@ h6 {font-size:25px; line-height:30px}
 .text-light-gray, .btn.text-light-gray {color:#d6d5d5}
 .text-very-light-gray, .btn.text-very-light-gray {color:#ededed}
 .text-deep-pink, .btn.text-deep-pink {color: var(--base-color)}
+.text-brand-yellow, .btn.text-brand-yellow {color: var(--brand-yellow)}
 
 /* dropcap */
 .first-letter {float: left; font-size: 50px; line-height: auto; margin: 0 20px 0 0; text-align: center; padding: 10px 0; font-weight: 600}
@@ -277,8 +282,10 @@ a.text-very-light-gray-hover:hover {color:#ededed !important;}
 .bg-extra-light-gray {background-color:#e0e0e0}
 .bg-medium-light-gray {background-color:#ededed}
 .bg-light-gray {background-color:#f7f7f7}
+.bg-dark-navy {background-color: #1D225C;}
 .bg-very-light-gray {background-color:#fafafa}
 .bg-deep-pink {background-color: var(--base-color);}
+.bg-brand-yellow {background-color: var(--brand-yellow);}
 .bg-transparent-white {background-color: rgba(255,255,255,0.3); background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 37%, rgba(255,255,255,1) 96%, rgba(255,255,255,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(37%, rgba(255,255,255,0)), color-stop(96%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1))); background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 37%, rgba(255,255,255,1) 96%, rgba(255,255,255,1) 100%); background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 37%, rgba(255,255,255,1) 96%, rgba(255,255,255,1) 100%); background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 37%, rgba(255,255,255,1) 96%, rgba(255,255,255,1) 100%); background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 37%, rgba(255,255,255,1) 96%, rgba(255,255,255,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );}
 .bg-transparent-black {background-color: rgba(0,0,0,0); background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,1) 96%, rgba(0,0,0,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(37%, rgba(0,0,0,0)), color-stop(96%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))); background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,1) 96%, rgba(0,0,0,1) 100%); background: -o-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,1) 96%, rgba(0,0,0,1) 100%); background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,1) 96%, rgba(0,0,0,1) 100%); background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,1) 96%, rgba(0,0,0,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );}
 .bg-gradient-light-red-light-orange {background-image: linear-gradient(to right top, #ff8e43, #ff7a41, #ff6343, #ff4848, #ff214f)}
@@ -290,6 +297,10 @@ a.text-very-light-gray-hover:hover {color:#ededed !important;}
 .bg-charcoal-gray{background-color: #0e0f10;}
 .bg-transparent-white2{background: rgba(255,255,255,.2) !important;}
 .bg-transparent-black-very-light {background-color: rgba(0, 0, 0, 0.15) !important;}
+.bg-content-01 {position: relative;padding: 4rem;overflow: hidden;background:#1D225C;}
+.bg-content-02 {position: relative;padding: 4rem;overflow: hidden;background:#262D6E;}
+.bg-content-01:after {content: "";background: url('../images/blue-poly-line-bg.png');width: 450px;height: 503px;position: absolute;bottom: 0;right: 0;background-repeat: no-repeat;background-size: contain;opacity: 0.5;pointer-events: none;}
+.bg-content-02:after {content: "";background: url('../images/navy-poly-line-bg.png');width: 450px;height: 503px;position: absolute;top: 0;right: 0;background-repeat: no-repeat;background-size: contain;opacity: 0.5;pointer-events: none;}
 
 /* ===================================
     05. Custom
@@ -444,12 +455,13 @@ textarea.input-bg {background-color: #f7f7f7; border-radius: 4px; border: 1px so
 .btn.btn-black {background:#000000; border-color: #000000; color: #fff}
 .btn.btn-black:hover, .btn.btn-black:focus {background: transparent; color: #000}
 .btn.btn-dark-gray {background: #232323; border-color: #232323; color: #fff}
-.btn.btn-dark-gray:hover, .btn.btn-dark-gray:focus {background: transparent; color: #232323}
+.btn.btn-dark-gray:hover, .btn.btn-dark-gray:focus, .btn.btn-brand-yellow:hover, .btn.btn-brand-yellow:focus {background: transparent; color: #232323}
 .btn.btn-light-gray {background: #dbdbdb; border-color: #dbdbdb; color: #232323}
 .btn.btn-light-gray:hover, .btn.btn-light-gray:focus {background: transparent; border-color: #dbdbdb; color: #dbdbdb}
 .btn.btn-deep-pink {background: var(--base-color); border-color: var(--base-color); color: #ffffff}
 .btn.btn-deep-pink:hover, .btn.btn-deep-pink:focus {background: transparent; border-color: var(--base-color); color: var(--base-color)}
 .btn-warning, .btn-warning:hover {color: #fff;}
+.btn.btn-brand-yellow {background: var(--brand-yellow); border-color: var(--brand-yellow); color: #fff}
 
 /* button transparent */
 .btn.btn-transparent-white {background: transparent; border-color: #ffffff; color: #ffffff}
@@ -527,6 +539,7 @@ textarea.input-bg {background-color: #f7f7f7; border-radius: 4px; border: 1px so
 .border-color-light-gray {border-color:#f5f5f5 !important;}
 .border-color-light-pink {border-color:#862237 !important;}
 .border-color-deep-pink {border-color:var(--base-color) !important;}
+.border-color-light-olive {border-color:var(--brand-accent) !important;}
 .border-color-transparent-pink {border-color: rgba(255, 33, 79, 0.45) !important;}
 
 .required-error {border: 1px solid #ee2323 !important}
@@ -3365,7 +3378,8 @@ figure{margin: 0;}
 .feature-box.feature-box-17 .box .content .details {opacity: 0;}
 .feature-box.feature-box-17 .box:hover .content .details {opacity: 1;}
 .feature-box.feature-box-17 .box:hover .content {top: 0; border-bottom-color: var(--base-color);}
-.feature-box.feature-box-17 .box:hover {background-color: var(--base-color);}
+/* .feature-box.feature-box-17 .box:hover {background-color: var(--base-color);} */
+.feature-box.feature-box-17 .box:hover {background-color: var(--brand-yellow);}
 .feature-box.feature-box-17 .box:hover i, .feature-box.feature-box-17 .box:hover .text-white-2-hover {color: #ffffff}
 
 /* feature box style 18 */
